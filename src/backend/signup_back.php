@@ -24,7 +24,8 @@
         $query_insert = "INSERT INTO user (name, gmail, pasword)
         VALUES ('$name', '$email', '$password')";
         $sql = mysqli_query($conn, $query_insert);
-        header("location : ../frontend/login.php");
+        header("location: ../frontend/login.php");
+        exit();
     } else {
         header("Location: ../frontend/signup.php?error=exists");
         exit();
