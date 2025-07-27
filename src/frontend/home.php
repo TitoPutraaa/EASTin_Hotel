@@ -1,6 +1,8 @@
 <?php
     session_start();
     include "../backend/conection.php";
+    $result = mysqli_query($conn, "SELECT * FROM user");
+    $show = mysqli_fetch_assoc($result);
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +13,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>halo world</h1>
+    <?php
+        echo "<h1>WELCOME " . $show['name'] . "</h1>";
+        
+    ?>
 </body>
 </html>
